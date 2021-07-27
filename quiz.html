@@ -5,7 +5,7 @@
 		<link rel="stylesheet" href="quiz.css">
 		<title>Quiz</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="shortcut icon" href="https://psdigital.sk/wp-content/uploads/2020/07/PS-Digital-Marketing-Quiz-otestujte-svoje-vedomosti-z-marketingu.png">
+		<link rel="shortcut icon" href="title-icon.png">
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 	</head>
@@ -15,103 +15,100 @@
 				<h1>America flag quiz</h1>
 				<h3>Rules</h3>
 				<ul>
-					<li>60 seconds for whole test</li>
-					<li>12 attempts - each click counts as an attempt</li>
-					<li>Click on <span class="green">Evaluate test !</span> when you are done</li>
-					<li>Once you're out of attempts, the test will be evaulated automatically</li>
+					<li>Test is time limited - 60s</li>
+					<li>Click on <span class="green">Evaluate test !</span> when you're done</li>
+					<li>Once you're out of time, the test will be evaulated automatically</li>
 				</ul><br>
 				<button onclick="startgame()" class="startbutton">Start Game</button>
 			</div>
 		</div>
 		<div id="wholegame">
 		<div class="time">
-			<p>Time left: <span id="timeCount"></span> s</p><br>
-			<p id="points">0</p>
-			<p>Attempts</p><br>
-			<p id="attempts">12</p>
+			<p>Time left: <span id="timeCount"></span> s</p>
 		</div>
 		<div class="container">
-			<img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Flag_of_Costa_Rica.svg" width="300">
-			<div class="buttons-container">
-				<button onclick="removeAttempts()">Chile</button>
-				<button id="1" onclick="addPoints(this.id)">Costarica</button>
-				<button onclick="removeAttempts()">Guatemala</button>
+			<img src="costarica.png" width="300">
+			<div class="buttons-container" id="costarica">
+				<button id="1" onclick="choice(this.id)">Chile</button>
+				<button id="2" onclick="choice(this.id)">Costarica</button>
+				<button id="3" onclick="choice(this.id)">Guatemala</button>
 			</div>
 		</div>
 		<div class="container">
-			<img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/1200px-Flag_of_Brazil.svg.png" width="300">
-			<div class="buttons-container">
-				<button onclick="removeAttempts()">Haiti</button>
-				<button onclick="removeAttempts()">Argentina</button>
-				<button id="2" onclick="addPoints(this.id)">Brazil</button>
+			<img src="brazil.png" width="300">
+			<div class="buttons-container" id="brazil">
+				<button id="4" onclick="choice(this.id)">Haiti</button>
+				<button id="5" onclick="choice(this.id)">Argentina</button>
+				<button id="6" onclick="choice(this.id)">Brazil</button>
 			</div>
 		</div>
 		<div class="container">
-			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/2560px-Flag_of_Colombia.svg.png" width="300">
-			<div class="buttons-container">
-				<button onclick="removeAttempts()">Cuba</button>
-				<button id="3" onclick="addPoints(this.id)">Columbia</button>
-				<button onclick="removeAttempts()">Bolivia</button>
+			<img src="columbia.png" width="300">
+			<div class="buttons-container" id="columbia">
+				<button id="7" onclick="choice(this.id)">Cuba</button>
+				<button id="8" onclick="choice(this.id)">Columbia</button>
+				<button id="9" onclick="choice(this.id)">Bolivia</button>
 			</div>
 		</div>
 		<div class="container">
-			<img src="https://wallpaperaccess.com/full/1410846.jpg" width="300">
-			<div class="buttons-container">
-				<button id="4" onclick="addPoints(this.id)">Peru</button>
-				<button onclick="removeAttempts()">Puerto Rico</button>
-				<button onclick="removeAttempts()">Panama</button>
+			<img src="peru.jpg" width="300">
+			<div class="buttons-container" id="peru">
+				<button id="10" onclick="choice(this.id)">Peru</button>
+				<button id="11" onclick="choice(this.id)">Puerto Rico</button>
+				<button id="12" onclick="choice(this.id)">Panama</button>
 			</div>
 		</div>
 		<div class="container">
-			<img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Flag_of_Venezuela.svg" width="300">
-			<div class="buttons-container">
-				<button onclick="removeAttempts()">Uruguay</button>
-				<button onclick="removeAttempts()">Guyana</button>
-				<button id="5" onclick="addPoints(this.id)">Venezuela</button>
+			<img src="venezuela.png" width="300">
+			<div class="buttons-container" id="venezuela">
+				<button id="13" onclick="choice(this.id)">Uruguay</button>
+				<button id="14" onclick="choice(this.id)">Guyana</button>
+				<button id="15" onclick="choice(this.id)">Venezuela</button>
 			</div>
 		</div>
 		<div class="container">
-			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/1200px-Flag_of_Mexico.svg.png" width="300">
-			<div class="buttons-container">
-				<button onclick="removeAttempts()">Surinam</button>
-				<button onclick="removeAttempts()">Grenada</button>
-				<button id="6" onclick="addPoints(this.id)">Mexico</button>
+			<img src="mexico.png" width="300">
+			<div class="buttons-container" id="mexico">
+				<button id="16" onclick="choice(this.id)">Surinam</button>
+				<button id="17" onclick="choice(this.id)">Grenada</button>
+				<button id="18" onclick="choice(this.id)">Mexico</button>
 			</div>
 		</div>
 		<div class="container">
-			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/1200px-Flag_of_Uruguay.svg.png" width="300">
-			<div class="buttons-container">
-				<button onclick="removeAttempts()">Anguilla</button>
-				<button id="7" onclick="addPoints(this.id)">Uruguay</button>
-				<button onclick="removeAttempts()">Barbado</button>
+			<img src="uruguay.png" width="300">
+			<div class="buttons-container" id="uruguay">
+				<button id="19" onclick="choice(this.id)">Anguilla</button>
+				<button id="20" onclick="choice(this.id)">Uruguay</button>
+				<button id="21" onclick="choice(this.id)">Barbado</button>
 			</div>
 		</div>
 		<div class="container">
-			<img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Flag_of_Chile.svg" width="300">
-			<div class="buttons-container">
-				<button id="8" onclick="addPoints(this.id)">Chile</button>
-				<button onclick="removeAttempts()">Honduras</button>
-				<button onclick="removeAttempts()">Panama</button>
+			<img src="chile.png" width="300">
+			<div class="buttons-container" id="chile">
+				<button id="22" onclick="choice(this.id)">Chile</button>
+				<button id="23" onclick="choice(this.id)">Honduras</button>
+				<button id="24" onclick="choice(this.id)">Panama</button>
 			</div>
 		</div>
 		<div class="container">
-			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Flag_of_Honduras.svg/1200px-Flag_of_Honduras.svg.png" width="300">
-			<div class="buttons-container">
-				<button onclick="removeAttempts()">Aruba</button>
-				<button onclick="removeAttempts()">Guatemala</button>
-				<button id="9" onclick="addPoints(this.id)">Honduras</button>
+			<img src="honduras.png" width="300">
+			<div class="buttons-container" id="honduras">
+				<button id="25" onclick="choice(this.id)">Aruba</button>
+				<button id="26" onclick="choice(this.id)">Guatemala</button>
+				<button id="27" onclick="choice(this.id)">Honduras</button>
 			</div>
 		</div>
 		<div class="container">
-			<img src="https://www.countryflags.com/wp-content/uploads/puerto-rico-flag-jpg-xl.jpg" width="300">
-			<div class="buttons-container">
-				<button id="10" onclick="addPoints(this.id)">Puerto Rico</button>
-				<button onclick="removeAttempts()">Haiti</button>
-				<button onclick="removeAttempts()">Paraguay</button>
+			<img src="puerto-rico.jpg" width="300">
+			<div class="buttons-container" id="puertorico">
+				<button id="28" onclick="choice(this.id)">Puerto Rico</button>
+				<button id="29" onclick="choice(this.id)">Haiti</button>
+				<button id="30" onclick="choice(this.id)">Paraguay</button>
 			</div>
 		</div>
 		<button class="evaluate-button" id="evaluate-button">Evaluate test !</button>
 		</div>
 		<script src="quiz.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- JQuery -->
 	</body>
 </html>
