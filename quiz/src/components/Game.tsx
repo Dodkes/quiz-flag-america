@@ -1,9 +1,19 @@
-import { data } from "./data";
+import { data, answers } from "./data";
 
 export default function Game() {
-  function choice(option: string, correct: string) {
-    console.log(option);
-    console.log(correct);
+  console.log(answers);
+  function choice(index: number, option: string) {
+    answers[index].answer = option;
+  }
+
+  function evaluate() {
+    let score = 0;
+    for (const i in answers) {
+      if (answers[i].answer === answers[i].correct) {
+        score++;
+      }
+    }
+    console.log(score);
   }
 
   return (
@@ -18,18 +28,21 @@ export default function Game() {
         <div className="container" key={index}>
           <img src={item.img} width="300" />
           <div>
-            <button onClick={() => choice(item.option1, item.correct)}>
+            <button onClick={() => choice(index, item.option1)}>
               {item.option1}
             </button>
-            <button onClick={() => choice(item.option2, item.correct)}>
+            <button onClick={() => choice(index, item.option2)}>
               {item.option2}
             </button>
-            <button onClick={() => choice(item.option3, item.correct)}>
+            <button onClick={() => choice(index, item.option3)}>
               {item.option3}
             </button>
           </div>
         </div>
       ))}
+      <button onClick={() => evaluate()} className="evaluate-button">
+        Evaluate test !
+      </button>
     </div>
   );
 }

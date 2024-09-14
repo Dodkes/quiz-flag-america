@@ -89,3 +89,10 @@ export const data: Option[] = [
       img: PuertoRico,
     },
   ];
+
+const answers: {answer: string, correct: string}[] = []
+for (const x of data)  {
+    answers.push({answer: "", correct: x.correct})
+}
+
+export {answers}
