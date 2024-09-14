@@ -9,7 +9,7 @@ import Chile from "../assets/chile.png";
 import Honduras from "../assets/honduras.png";
 import PuertoRico from "../assets/puerto-rico.jpg";
 
-interface Option {
+type Option = {
     option1: string;
     option2: string;
     option3: string;

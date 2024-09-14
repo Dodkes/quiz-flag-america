@@ -1,9 +1,10 @@
 import { data, answers } from "./data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import cx from "classnames";
 
 export default function Game() {
   const [reveal, setReveal] = useState<boolean>(false);
+  const [time, setTime] = useState<number>(60);
   const [selectedOptions, setSelectedOptions] = useState<{
     [key: number]: string;
   }>({});
@@ -15,7 +16,6 @@ export default function Game() {
       ...prevState,
       [index]: option,
     }));
-    console.log(selectedOptions);
   }
 
   function evaluate() {
@@ -30,12 +30,17 @@ export default function Game() {
     alert(`Your score is ${score}`);
   }
 
+  useEffect(() => {
+    setTimeout(() => {
+      if (time === 0) return evaluate();
+      setTime(time - 1);
+    }, 1000);
+  }, [time]);
+
   return (
     <div>
       <div className="time">
-        <p>
-          Time left: <span id="timeCount"></span> s
-        </p>
+        <p>Time left: {time} s</p>
       </div>
 
       {data.map((item, index) => (

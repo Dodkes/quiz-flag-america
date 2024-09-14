@@ -4,7 +4,7 @@ import Intro from "./components/Intro";
 import { useState } from "react";
 
 function App() {
-  const [startGame, setStartGame] = useState<boolean>(true);
+  const [startGame, setStartGame] = useState<boolean>(false);
 
   return <>{!startGame ? <Intro setStartGame={setStartGame} /> : <Game />}</>;
 }

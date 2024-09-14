@@ -18,22 +18,21 @@
 }
 
 body {
-  background-image: linear-gradient(to top, black, white);
-  background-repeat: no-repeat;
+  background-color: #4a4a98;
 }
 
 img {
-  display: block;
   margin: auto;
   box-shadow: 5px 5px 20px black;
   margin-top: 20px;
-  border-radius: 20px;
+  border-radius: 5px;
 }
 
 button {
+  margin: 10px 5px;
   background-color: white;
-  padding: 10px 20px 10px 20px;
-  border-radius: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
   border: 1px solid black;
   box-shadow: 2px 2px 2px black;
 }
@@ -43,7 +42,6 @@ button:hover {
 }
 
 @media screen and (max-width: 768px) {
-  /*until screen width is max 768px following is applied*/
   img {
     width: 50%;
   }
@@ -61,14 +59,6 @@ button:hover {
   margin-bottom: 150px;
 }
 
-.buttons-container {
-  position: absolute;
-  top: 120%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
 .evaluate-button {
   animation-name: eval-animation;
   animation-duration: 3s;
@@ -76,9 +66,7 @@ button:hover {
   background-color: green;
   margin: auto;
   width: 100%;
-  border-radius: 0;
   font-size: 20px;
-  font-weight: bold;
 }
 
 @keyframes eval-animation {
@@ -104,9 +92,10 @@ button:hover {
 .time {
   border-radius: 0px 10px 10px 0px;
   background-color: rgba(255, 255, 255, 0.5);
-  color: black;
   padding: 20px;
   position: fixed;
+  border: 1px solid black;
+  box-shadow: 2px 2px 2px black;
   top: 50%;
   left: 0;
 }
@@ -123,12 +112,9 @@ button:hover {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(
-    -50%,
-    -50%
-  ); /*premiestnenie top, left -50% lebo top left position zacina od rohu*/
+  transform: translate(-50%, -50%);
 }
 
-.intro-margin > ul > li {
+li {
   list-style-type: none;
 }
