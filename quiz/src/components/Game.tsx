@@ -1,7 +1,9 @@
 import { data, answers } from "./data";
 import { useState } from "react";
+import cx from "classnames";
 
 export default function Game() {
+  const [reveal, setReveal] = useState<boolean>(false);
   const [selectedOptions, setSelectedOptions] = useState<{
     [key: number]: string;
   }>({});
@@ -13,6 +15,7 @@ export default function Game() {
       ...prevState,
       [index]: option,
     }));
+    console.log(selectedOptions);
   }
 
   function evaluate() {
@@ -22,7 +25,9 @@ export default function Game() {
         score++;
       }
     }
-    console.log(score);
+
+    setReveal(true);
+    alert(`Your score is ${score}`);
   }
 
   return (
@@ -39,25 +44,28 @@ export default function Game() {
           <div>
             <button
               onClick={() => choice(index, item.option1)}
-              className={
-                selectedOptions[index] === item.option1 ? "active" : ""
-              }
+              className={cx(
+                selectedOptions[index] === item.option1 ? "active" : "",
+                item.option1 === item.correct && reveal && "correct"
+              )}
             >
               {item.option1}
             </button>
             <button
               onClick={() => choice(index, item.option2)}
-              className={
-                selectedOptions[index] === item.option2 ? "active" : ""
-              }
+              className={cx(
+                selectedOptions[index] === item.option2 ? "active" : "",
+                item.option2 === item.correct && reveal && "correct"
+              )}
             >
               {item.option2}
             </button>
             <button
               onClick={() => choice(index, item.option3)}
-              className={
-                selectedOptions[index] === item.option3 ? "active" : ""
-              }
+              className={cx(
+                selectedOptions[index] === item.option3 ? "active" : "",
+                item.option3 === item.correct && reveal && "correct"
+              )}
             >
               {item.option3}
             </button>

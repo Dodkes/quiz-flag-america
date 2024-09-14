@@ -13,14 +13,13 @@
   color: white;
 }
 
+.correct {
+  background-color: rgb(89, 182, 89);
+}
+
 body {
   background-image: linear-gradient(to top, black, white);
   background-repeat: no-repeat;
-}
-
-.green {
-  color: green;
-  font-weight: bold;
 }
 
 img {

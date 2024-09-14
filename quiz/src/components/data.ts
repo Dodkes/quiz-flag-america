@@ -77,7 +77,7 @@ export const data: Option[] = [
     {
       option1: "Aruba",
       option2: "Guatemala",
-      option3: "Panama",
+      option3: "Honduras",
       correct: "Honduras",
       img: Honduras,
     },
