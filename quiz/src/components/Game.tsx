@@ -1,9 +1,18 @@
 import { data, answers } from "./data";
+import { useState } from "react";
 
 export default function Game() {
-  console.log(answers);
+  const [selectedOptions, setSelectedOptions] = useState<{
+    [key: number]: string;
+  }>({});
+
   function choice(index: number, option: string) {
     answers[index].answer = option;
+
+    setSelectedOptions((prevState) => ({
+      ...prevState,
+      [index]: option,
+    }));
   }
 
   function evaluate() {
@@ -28,13 +37,28 @@ export default function Game() {
         <div className="container" key={index}>
           <img src={item.img} width="300" />
           <div>
-            <button onClick={() => choice(index, item.option1)}>
+            <button
+              onClick={() => choice(index, item.option1)}
+              className={
+                selectedOptions[index] === item.option1 ? "active" : ""
+              }
+            >
               {item.option1}
             </button>
-            <button onClick={() => choice(index, item.option2)}>
+            <button
+              onClick={() => choice(index, item.option2)}
+              className={
+                selectedOptions[index] === item.option2 ? "active" : ""
+              }
+            >
               {item.option2}
             </button>
-            <button onClick={() => choice(index, item.option3)}>
+            <button
+              onClick={() => choice(index, item.option3)}
+              className={
+                selectedOptions[index] === item.option3 ? "active" : ""
+              }
+            >
               {item.option3}
             </button>
           </div>
