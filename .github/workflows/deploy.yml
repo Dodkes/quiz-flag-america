@@ -28,5 +28,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.4.0
         with:
           branch: main # The branch the action will deploy to
-          folder: build # The folder the action will deploy
+          folder: dist # The folder the action will deploy
           token: ${{ secrets.GITHUB_TOKEN }} # Default GitHub token
