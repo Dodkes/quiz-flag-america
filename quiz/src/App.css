@@ -81,12 +81,14 @@ button:hover {
   }
 }
 
+.green {
+  color: lightgreen;
+}
+
 .startbutton {
   font-weight: bold;
   background-color: green;
-  animation-name: eval-animation;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
+  animation: eval-animation 3s infinite;
 }
 
 .time {
@@ -101,7 +103,7 @@ button:hover {
 }
 
 #intro {
-  color: white;
+  color: #fff;
   width: 100%;
   background-color: #0f0f3d;
   height: 100vh;
@@ -109,10 +111,7 @@ button:hover {
 }
 
 .intro-margin {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateY(100%);
 }
 
 li {

@@ -5,6 +5,7 @@ import cx from "classnames";
 export default function Game() {
   const [reveal, setReveal] = useState<boolean>(false);
   const [time, setTime] = useState<number>(60);
+  const [score, setScore] = useState<number>(0);
   const [selectedOptions, setSelectedOptions] = useState<{
     [key: number]: string;
   }>({});
@@ -19,28 +20,25 @@ export default function Game() {
   }
 
   function evaluate() {
-    let score = 0;
     for (const i in answers) {
       if (answers[i].answer === answers[i].correct) {
-        score++;
+        setScore((prevState) => prevState + 1);
       }
     }
-
     setReveal(true);
-    alert(`Your score is ${score}`);
   }
 
   useEffect(() => {
     setTimeout(() => {
       if (time === 0) return evaluate();
-      setTime(time - 1);
+      !reveal && setTime(time - 1);
     }, 1000);
   }, [time]);
 
   return (
     <div>
       <div className="time">
-        <p>Time left: {time} s</p>
+        {reveal ? `Your score: ${score}` : `Time left: ${time} s`}
       </div>
 
       {data.map((item, index) => (
